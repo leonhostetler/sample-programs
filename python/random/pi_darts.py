@@ -6,7 +6,6 @@ and counting the number that land inside.
 Leon Hostetler, May 6, 2016
 
 USAGE: python pi_darts.py
-
 """
 from __future__ import division, print_function
 import matplotlib.pyplot as plt

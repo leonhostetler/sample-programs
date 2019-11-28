@@ -9,7 +9,7 @@
 dir="output_v3"
 out_file="data_v3.txt"
 
-# Gather all the data into files
+# Gather N=100mil data into a file
 echo "#Data for N=100M:" > $out_file
 echo "#p    gen      sam      bin      dist     sort     gath     total" >> $out_file
 
@@ -29,6 +29,7 @@ do
 
 done
 
+# Gather N=500mil data into the file
 echo "#" >> $out_file
 echo "#Data for N=500M:" >> $out_file
 echo "#p    gen      sam      bin      dist     sort     gath     total" >> $out_file
@@ -49,6 +50,7 @@ do
 
 done
 
+# Gather N=2bil data into the file
 echo "#" >> $out_file
 echo "#Data for N=2B:" >> $out_file
 echo "#p    gen      sam      bin      dist     sort     gath     total" >> $out_file

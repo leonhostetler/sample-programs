@@ -23,7 +23,7 @@ With the included shell scripts, you can complete all 150 runs and gather the da
           sq
        Once the jobs start running, they will output log files with names like slurm-50584516.out. To check in on all of these log files at once, use a command like
           tail slurm*
-       This command displays the last few lines in each log file. If none of the log files contain output, that is good. Occasionally, you will see messages that are no cause for worry. However, if you see segfaults, something is wrong with your program (or maybe you did not request sufficient memory). You can cancel running or pending jobs using the command:
+       This command displays the last few lines in each log file. If none of the log files contain output, that is good. Occasionally, you will see messages that are no cause for worry. However, if you see segfaults, something might be wrong with your application (or maybe you did not request sufficient memory). You can cancel running or pending jobs using the command:
           scancel <job_id>
 
     5) Gather all your data into a file "data_v3.txt" by running:
@@ -42,7 +42,7 @@ Descriptions:
 
     - submit_jobs.sh: Loops through every file in the directory /job_scripts/ and submits it as a batch job.
 
-    - gather_data_v3.sh: This script grabs each output file in /output_v3/, extracts the interesting data, and puts it in a nice space delimited table in data_v3.txt. WARNING: This script will not work for you because it requires that your application bucket_sort_v3.x outputs its timing information in a very specific format. However, it should be fairly easy to edit for your needs. For example, the line "gen="$(awk '{if(NR==8) print $4}' $file)"" tells it to extract the 4th "word" from the 8th line in the file. In my application's output, the 4th word in the 8th line is the "generation time". 
+    - gather_data_v3.sh: This script grabs each output file in /output_v3/, extracts the interesting data, and puts it in a nice space delimited table in data_v3.txt. WARNING: This script will not work for you because it requires that your application bucket_sort_v3.x outputs its timing information in a very specific format. However, it should be fairly easy to edit for your needs. For example, the line "gen="$(awk '{if(NR==8) print $4}' $file)"" tells it to extract the 4th "word" from the 8th line in the output file. In my application's output, the 4th word in the 8th line is the "generation time". Hence, I am grabbing that number and storing it in the variable "gen" for later output to data_v3.txt. 
 
 
 
